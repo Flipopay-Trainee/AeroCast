@@ -5,6 +5,7 @@ let result;
 export const fetchWeatherData = createAsyncThunk(
   "fetchWeatherData",
   async (city) => {
+    console.log(city);
     const response = await fetch(
       `https://api.weatherapi.com/v1/forecast.json?q=${city}&days=4&key=b94ce14915d7492999b73045242005`
     );
@@ -29,7 +30,6 @@ const weatherData = createSlice({
       // console.log(`action.payload clg -`);
       // console.log(state.data.location.name);
       state.data = result;
-      console.log(state.data.location.country);
       state.status = "succeeded";
     });
     builder.addCase(fetchWeatherData.rejected, (state, action) => {

@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchWeatherData } from "./redux/slice/weatherData";
 import SearchBar from "./components/SearchBar";
 import LoadingScreen from "./components/LoadingScreen";
+import WeatherCard from "./components/WeatherCard";
 
 function App() {
   // redux reducer dispatches and selectors
@@ -18,10 +19,8 @@ function App() {
 
   return (
     <>
-      <>
-        {weatherDataStatus == "succeeded" ? <SearchBar /> : <LoadingScreen />}
-      </>
-      {/* <SearchBar /> */}
+      {weatherDataStatus == "succeeded" ? <SearchBar /> : <LoadingScreen />}
+      <WeatherCard />
     </>
   );
 }
