@@ -23,11 +23,11 @@ const SearchBar = () => {
 
   return (
     <section className="flex flex-col justify-center items-center p-4">
-      <h1 className="font-logo font-black text-2xl">WeatherWise</h1>
+      <h1 className="font-logo font-black text-2xl lg:text-4xl">WeatherWise</h1>
       <div
         className={`w-full my-4 flex justify-between items-center border-2 rounded-full border-black p-2 ${
           onFocus ? "border-blue-400 shadow-xl ease-in-out" : ""
-        }  lg:border-red-500`}
+        } lg:w-8/12`}
       >
         <input
           className="w-11/12 p-2 text-xl focus:outline-none focus:ring-0)"

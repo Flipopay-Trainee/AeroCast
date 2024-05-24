@@ -4,6 +4,7 @@ import { fetchWeatherData } from "./redux/slice/weatherData";
 import SearchBar from "./components/SearchBar";
 import LoadingScreen from "./components/LoadingScreen";
 import WeatherCard from "./components/WeatherCard";
+import Forecast from "./components/Forecast";
 
 function App() {
   // redux reducer dispatches and selectors
@@ -19,8 +20,26 @@ function App() {
 
   return (
     <>
-      {weatherDataStatus == "succeeded" ? <SearchBar /> : <LoadingScreen />}
-      <WeatherCard />
+      {weatherDataStatus == "succeeded" ? (
+        <>
+          <SearchBar />
+          {/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent
+          ) ? (
+            <>
+              <WeatherCard />
+              <Forecast />
+            </>
+          ) : (
+            <div className="flex">
+              <WeatherCard />
+              <Forecast />
+            </div>
+          )}
+        </>
+      ) : (
+        <LoadingScreen />
+      )}
     </>
   );
 }

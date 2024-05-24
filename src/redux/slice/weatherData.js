@@ -10,7 +10,7 @@ export const fetchWeatherData = createAsyncThunk(
       `https://api.weatherapi.com/v1/forecast.json?q=${city}&days=4&key=b94ce14915d7492999b73045242005`
     );
     result = await response.json();
-    // console.log(result);
+    console.log(result);
   }
 );
 
