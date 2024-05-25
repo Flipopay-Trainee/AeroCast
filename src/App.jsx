@@ -14,7 +14,6 @@ function App() {
 
   // useEffect for initial render
   useEffect(() => {
-    console.log("initial fetch");
     dispatch(fetchWeatherData(initialCity));
   }, []);
 

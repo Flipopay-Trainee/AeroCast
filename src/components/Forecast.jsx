@@ -5,7 +5,6 @@ const Forecast = () => {
     (state) => state.weatherData.data.forecast.forecastday
   );
 
-  console.log(forecastData);
   return (
     <section className="m-4 flex flex-col justify-center items-center lg:w-full lg:border-2 lg:border-black lg:rounded-3xl lg:px-6 lg:py-2">
       <p className="text-3xl font-bold">Forecast</p>
